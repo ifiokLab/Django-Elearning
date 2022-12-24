@@ -1,0 +1,29 @@
+.body{
+    padding: 10px 20px;
+}
+.body .module{
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+    border: solid 2px grey;
+    padding: 10px 20px;
+    width: 40vw;
+}
+
+.body .card{
+    font-size: 1.4rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 5px;
+}
+.body .card .title{
+    font-weight: 600;
+}
+.body .card .a input{
+    width:100%;
+    padding: 4px;
+}
+.body .card .b textarea{
+    width:100%;
+    padding: 4px;
+}

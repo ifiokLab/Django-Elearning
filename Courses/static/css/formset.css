@@ -1,0 +1,30 @@
+.body{
+    padding: 10px 20px;
+}
+.body .module form {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: black;
+    width: 50vw;
+    padding: 10px 20px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+    border: solid 2px grey;
+}
+.body .module form input[type = 'text']{
+    width: 30rem;
+    padding: 4px;
+}
+.body .module form textarea{
+    width: 50rem;
+}
+.body .button{
+    background-color: blue;
+    border:transparent;
+    width:12rem;
+    padding: 10px 10px;
+    border-radius: 3px;
+    color: white;
+    
+}

@@ -1,0 +1,76 @@
+.body{
+ font-size: 1.3rem;
+}
+.body .container{
+    display: flex;
+}
+.body .card1{
+    background-color: black;
+    color: white;
+    padding: 0px 20px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    width: 30rem;
+}
+.body .card1 #modules{
+    list-style: none;
+    padding: 0 8px;
+    color: white;
+}
+.body .card1 .Edit-modules a{
+    text-decoration: none;
+    color: green;
+}
+.body .card1 #modules li{
+    padding: 10px 0 10px 10px;
+}
+.body .card1 #modules li:hover{
+    background-color:#3f3f3f;
+
+}
+.body .card1 .modules-items{
+    color: wheat;
+}
+.body .card1 #modules a{
+    text-decoration: none;
+    color: white;
+    cursor:move; 
+}
+.body .module{
+    padding: 0 0 0 20px;
+}
+.body .module .contents{
+    border:  1px solid #ccc;
+    padding: 0 0 20px 20px;
+    margin-bottom: 5px;
+}
+body .module .contents .content-card{
+    display: flex;
+}
+.body .module .contents .content-card a{
+    margin-right: 10px;
+    color: green;
+    text-decoration: none;
+}
+.body .module .contents .content-card input{
+    background-color: transparent;
+    border: none;
+    color: green;
+
+}
+
+.body .module .content-types{
+    list-style: none;
+    display: flex;
+}
+.body .module .content-types li{
+    background:#efefef;
+    margin-right: 12px;
+    padding: 6px 12px;
+}
+.body .module .content-types a{
+    color: green;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+

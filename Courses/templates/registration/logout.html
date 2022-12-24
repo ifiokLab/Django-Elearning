@@ -1,0 +1,13 @@
+{% extends 'Courses/base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Logged out Successful!</h1>
+    <p>Thanks for spending some quality time with the Web site today.</p>
+    <a href="{% url 'login' %}">Log in again</a>
+</div>
+{% endblock %}

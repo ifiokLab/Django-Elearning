@@ -1,0 +1,15 @@
+.body{
+    padding: 10px 20px;
+    color: black;
+}
+.body .module p{
+    font-size: 1.4rem;
+}
+
+.body .module input{
+    padding: 10px 40px;
+    border: transparent;
+    background-color: green;
+    color: white;
+    font-size: 1.4rem;
+}

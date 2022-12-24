@@ -1,0 +1,229 @@
+{% extends 'Courses/base.html' %}
+{% load static %}
+{% load course %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/course_detail.css' %}">
+    
+{% endblock %}
+
+{% block content %}
+<div class="body">
+    <div class="main-content">
+        <div class="top-container">
+            <div class="inner-container">
+                <div class="menu-url">
+                    <a href="">Development</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="">{{object.category}}</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="">Python</a>
+                </div>
+                <div class="course-landing-page">
+                    <div class="page-card1">
+                        <h1 class="title">{{object.title}}</h1>
+                        <div class="text">
+                            {{object.overview}}
+                        </div>
+                        <div class="ratings">
+                            <div class="stars">
+                                <span>(4.5)</span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star"></i></span>
+                                <span><i class="fas fa-star-half-alt"></i></span>
+                                <span>(110,450) ratings.</span>
+                            </div>
+                            <div class="students">
+                                <span>2049 Students</span>
+                            </div>
+                        </div>
+                        <div class="instructor">
+                            <span>Created by {{object.owner}}</span>
+                        </div>
+                        <div class="lang">
+                            <div class="update">
+                                <span><i class="fas fa-exclamation-circle"></i></span>
+                                <span>Last updated 5/2020</span>
+                            </div>
+                            <div class="globe">
+                                <span><i class="fas fa-globe"></i></span>
+                                <span>English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-container2">
+                <div class="sidebar-container-content">
+                  <div class="side-bar-container-content-group">
+                    <div class="side-bar-container-introduction-asset">
+                      <div class="intro-asset-wrapper">
+                        <div class="intro-asset-wrapper2">
+                            <button class="intro-asset-placeholder">
+                                <span class="intro-asset-img-asset">
+                                    <img src="{{ object.thumbnail.url }}" alt="">
+                                </span>
+                                <span class="intro-asset-overlay"></span>
+                                <span class="udlite-play-overlay">
+                                    <i class="fas fa-play-circle"></i>
+                                    <span class="udlite-heading">Preview this course</span>
+                                </span>
+                            </button>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                  <div class="sidebar-container-purchase-section">
+                    <div class="generic-purchase-section-main-container">
+                        <div class="enroll">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user in object.students.all %}
+                               <a href="{% url 'student_course_detail' object.id %}"> <button class="button">Already Enrolled</button></a>
+                            {% else %}
+                                <form action="{% url "student_enroll_course" %}" method="post">
+                                    {{ enroll_form }}
+                                    {% csrf_token %}
+                                    <input type="submit" class="button" value="Enroll now">
+                               </form>
+
+                            {% endif %}
+                            
+                            {% else %}
+                                <a href="{% url "student_registration" %}" class="button"><button class="button">SignUp to Enroll</button></a>
+                            {% endif %}
+                        </div>
+                        <div class="love">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="course-includes">
+                        <h2>This course includes</h2>
+                        <div class="include-card">
+                            <i class="fab fa-youtube"></i>
+                            <div class="include-text">25 hours on demand videos</div>
+                        </div>
+                        <div class="include-card">
+                            <i class="far fa-file-pdf"></i>
+                            <div class="include-text">13 Articles</div>
+                        </div>
+                        <div class="include-card">
+                            <i class="fas fa-cloud-download-alt"></i>
+                            <div class="include-text">5 downloadable resources</div>
+                        </div>
+                        <div class="include-card">
+                            <i class="fas fa-infinity"></i>
+                            <div class="include-text">Full lifetime access</div>
+                        </div>
+                        <div class="include-card">
+                            <i class="fas fa-medal"></i>
+                            <div class="include-text">Certificate of completion</div>
+                        </div>
+                    </div>
+                </div>  
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="landing-page-body">
+        <div class="course-landing-page-content">
+            <div class="component-margin">
+                <div class="learn-what">
+                    <h2 class="learn-heading">What you will learn</h2>
+                    <div class="learn-what-content">
+                        <div class="show-more-container">
+                            <div class="learn-objectives">
+                                <li>
+                                    <div class="block-list">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div class="block-list-content">
+                                            <span>Use Python for Data Science and Machine Learning</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block-list">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div class="block-list-content">
+                                            <span>Use Spark for Big Data Analysis</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block-list">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div class="block-list-content">
+                                            <span>Implement Machine Learning Algorithms</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block-list">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div class="block-list-content">
+                                            <span>Learn to use NumPy for Numerical Data</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block-list">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div class="block-list-content">
+                                            <span>Learn to use Pandas for Data Analysis</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block-list">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div class="block-list-content">
+                                            <span>Learn to use Matplotlib for Python Plotting</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="block-list">
+                                        <i class="fas fa-check-circle"></i>
+                                        <div class="block-list-content">
+                                            <span>Learn to use Seaborn for statistical plots</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="course-tab">
+                <div class="header"><h1>Course Content</h1></div>
+               {% for y in object.modules.all %}
+               
+                <div class="mob-tab-items">
+                    <div class="mob-tab-item">
+                        <button class="accordion a" >{{y.title}}</button>
+                        <div class="panel">
+                            <div class="panel-wrapper">
+                                <div class="pan-item">
+                                    {% for z in y.contents.all %}
+                                    <div class="pan-text">
+                                        <i class="fas fa-play-circle"></i>
+                                        <a href=""><span>{{z.item}}</span></a>
+                                    </div>
+                                   {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                {% endfor %}
+            </div>
+            
+           
+    </div>
+</div>
+{% endblock %}
+

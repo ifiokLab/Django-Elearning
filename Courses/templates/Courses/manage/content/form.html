@@ -1,0 +1,26 @@
+{% extends 'Courses/base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/formset.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="body">
+    <h1> hello
+        {% if object %}
+            Edit content "{{ object.title }}"
+        {% else %}
+            Add a new content
+        {% endif %}
+    </h1>
+    <div class="module">
+        <h2>Course info</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <p><input type="submit" value="Save content"></p>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,585 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  {% block extrahead %}
+  {% endblock %}
+  <script src="https://kit.fontawesome.com/a0903f3219.js" crossorigin="anonymous"></script>
+  <title>E-Learning</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-logo">
+            <a class="logo-link" href="{% url 'home' %}">E-Learning
+                <img class="logo-img" src="" alt="">
+            </a>
+        </div>
+        <div class="navbar-categories">
+            <div class="CateText">
+                <a class="catelink" href="">Categories</a>
+                <div class="menu">
+                    <ul class="sub-item--sub">
+                        <li>
+                            <a href=""> Web Development <i class="fas fa-angle-right" ></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href="">Front-end Web Development</a></li>
+                                <li><a href="">Back-end Web Development</a></li>
+                                <li><a href="">Fullstack Web Development</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href=""> Software & App Development <i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href="">Software & App development <br> with flutter dart</a></li>
+                                <li><a href="">Software & App development <br> with Python</a></li>
+                                <li><a href="">Software & App development <br> with Kotlin</a></li>
+                                <li><a href="">Software & App development <br> with java</a></li>
+                                <li><a href="">Software & App development <br> with ReactNative</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href=""> Game Development <i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href="">Game Development <br> with Unity Game Engine</a></li>
+                                <li><a href="">Game Development <br> with Unreal Game Engine</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Programming languages<i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href="">Python</a></li>
+                                <li><a href="">PHP</a></li>
+                                <li><a href="">Dart</a></li>
+                                <li><a href="">JavaScript</a></li>
+                                <li><a href="">Swift</a></li>
+                                <li><a href="">Java</a></li>
+                                <li><a href="">C++</a></li>
+                                <li><a href="">C#</a></li>
+                                <li><a href="">Kotlin</a></li>
+                                <li><a href="">R</a></li>
+                                <li><a href="">SQL</a></li>
+                                <li><a href="">Dart</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Data science<i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Artificial Intelligence & Machine <br> Learning <i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Cyber Security<i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Ethical Hacking <i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Database Management System <br> & Development<i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Operating System & Servers<i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">User Experience(UX) & User <br> Interface(UI) Design<i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">Graphics Design & Illustration<i class="fa fa-angle-right"></i></a>
+                            <ul class="sub-menu2">
+                                <li><a href=""></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-search">
+            <form class="navbar-search-box" action="">
+                <input type="text" class="box-text" placeholder="Search for anything">
+                <button class="search-box-icon"><i class='fa fa-search'></i></button>
+            </form>
+        </div>
+        <div class="navbar-services">
+            <div class="navbar-services-jobs">
+                <button class="jobs">
+                    <span class="jobs-link" >Jobs</span>
+                    <div class="jobs-box">
+                        <div class="jobs-box-content">
+                            <p>
+                                Get access to developers <br />
+                                remote Jobs 
+                            </p>
+                            <a href="#">Learn more</a>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="navbar-services-teach">
+                <button class="teach">
+                  <a href="{% url 'teach' %}"><span class="teach-link" >Teach on E-Learning</span></a>
+                    <div class="teach-box">
+                        <div class="teach-box-content">
+                            <p>
+                                Turn what you know into an <br> 
+                                opportunity and reach millions <br>
+                                around the world.
+                            </p>
+                            <a href="#">Learn more</a>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="navbar-cart">
+                <a class="navbar-cart--box" href="#">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <div class="box-cart">
+                  <div class="box-cart-content">
+                    <p>Your cart is empty.</p>
+                    <a href="#">Keep shopping</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="navbar-account">
+            {% if user.is_authenticated %}
+            <button class="navbar-account--login">
+                <a href="{% url 'logout' %}"><span>Logout</span></a>
+            </button>
+            {% else %}
+            <button class="navbar-account--login">
+                <a href="{% url 'login' %}"><span>Login</span></a>
+            </button>
+            <button class="navbar-account--signup">
+               <a style="color: white;" href="{% url 'student_registration' %}"> <span>Sign up</span></a>
+            </button>
+            {% endif %}
+        </div>
+    </header>
+    <header class="nav-mo">
+        <div class="nav-mo-box">
+          <div class="box-menu">
+            <i id="menu-icon" class="fa fa-bars"></i>
+            <div id="menu" class="menu">
+              <div id="menu-main" class="menu--main">
+                <div class="menu-account">
+                  <a href="#" target="_blank" rel="noopener noreferrer">Log in</a>
+                  <a href="#" target="_blank" rel="noopener noreferrer"
+                    >Sign up</a
+                  >
+                </div>
+                <div class="menu-more">
+                    <div class="menu-more--main">
+                      <a href="http://" target="_blank" rel="noopener noreferrer"
+                        >Teach on E-Learning</a
+                      >
+                    </div>
+                    <div class="menu-more--main">
+                      <a href="http://" target="_blank" rel="noopener noreferrer"
+                        >Remote Jobs for developers</a
+                      >
+                    </div>
+                  </div>
+                <div class="menu-cate">
+                  <div class="menu-cate--title"><span>Most popular</span></div>
+                  <div id="subitem" class="menu-cate--main">
+                    <a>Web Development</a>
+                    <i class="fa fa-angle-right"></i>                
+                  </div>
+                  <div id="submenu" class="submenu">
+                    <div class="submenu-box">
+                      <div id="submenuout" class="submenu-box--title">  
+                        <i  class="fas fa-angle-left"></i>
+                        <span>Menu</span>
+                      </div>
+                      <div class="submenu-box--content">
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Web Development</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >JavaScript</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >React</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >CSS</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Angular</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Django</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >PHP</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Node.Js</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >WordPress</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="subitem" class="menu-cate--main">
+                    <a >Mobile Development</a
+                    ><i class="fas fa-angle-right"></i>
+                   
+                  </div>
+                  <div id="submenu" class="submenu">
+                    <div class="submenu-box">
+                      <div id="submenuout" class="submenu-box--title">  
+                        <i  class="fas fa-angle-left"></i>
+                        <span>Menu</span>
+                      </div>
+                      <div class="submenu-box--content">
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Google Flutter</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Android Development</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >iOS Development</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >React Native</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Swift</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Dart (programing language)</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Mobile Development</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >Kotlin</a>
+                        </div>
+                        <div class="box-content--item">
+                          <a
+                            href="http://"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >SwiftUI</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="menu-cate--main">
+                    <a href="#">Game Development</a
+                    ><i class="fas fa-angle-right"></i>
+                  </div>
+                  <div class="menu-cate--main">
+                    <a href="#">Entrepreneurship</a
+                    ><i class="fas fa-angle-right"></i>
+                  </div>
+                  <div class="menu-cate--main">
+                    <a href="#">Business AnaLytics & Intelligence</a
+                    ><i class="fas fa-angle-right"></i>
+                  </div>
+                  <div class="menu-cate--main">
+                    <a href="#">Digital Marketing</a
+                    ><i class="fas fa-angle-right"></i>
+                  </div>
+                  <div class="menu-cate--main">
+                    <a href="#">Graphic Design & Illustration</a
+                    ><i class="fas fa-angle-right"></i>
+                  </div>
+                  <div class="menu-cate--main">
+                    <a href="#">IT Certification</a
+                    ><i class="fas fa-angle-right"></i>
+                  </div>
+                  <div class="menu-cate--main">
+                    <a href="#">Personal Transformation</a
+                    ><i class="fas fa-angle-right"></i>
+                  </div>
+                  <div class="menu-cate--main">
+                    <a href="#">All categories</a
+                    ><i class="fas fa-angle-right"></i>
+                  </div>
+                </div>
+                <div class="menu-more">
+                  <div class="menu-more--title"><span>More from E-Learning</span></div>
+                  <div class="menu-more--main">
+                    <a href="http://" target="_blank" rel="noopener noreferrer"
+                      >About</a
+                    >
+                  </div>
+                  <div class="menu-more--main">
+                    <a href="http://" target="_blank" rel="noopener noreferrer"
+                      >Help</a
+                    >
+                  </div>
+                  <div class="menu-more--main">
+                    <a href="http://" target="_blank" rel="noopener noreferrer"
+                      >Invite friends</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div id="menu-out" class="menu-out">
+                <div class="menu-out-main"></div>
+              </div>
+              <div id="menu-exit" class="menu-exit">
+                <button id="icon-exit" class="menu-exit--icon">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="box-logo">
+            <a class="logo-link" href="">E-Learning
+                <img class="logo-img" src="" alt="">
+            </a>
+          </div>
+          <div class="box-other">
+            <div class="subbox">
+              <button><i class="fas fa-search"></i></button>
+              <button><i class="fas fa-shopping-cart"></i></button>
+            </div>
+          </div>
+        </div>
+    </header>
+    {% block content %}
+        
+    {% endblock %}
+    <div class="cate-card-wrapper">
+                <div class="cate-card-detail">
+                    <div class="top-cate">
+                        <h1>Top Categories</h1>
+                    </div>
+                    <div class="cate-link-wrapper">
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-laptop-code"></i>
+                                <h1>Web Development</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-mobile"></i>
+                                <h1>Software & Mobile <br> App Development</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-code"></i>
+                                <h1>Programming Languages</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-shield-alt"></i>
+                                <h1>Cyber Security</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-user-secret"></i>
+                                <h1>Ethical Hacking</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-database"></i>
+                                <h1>Database Management <br> System & Development</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="far fa-chart-bar"></i>
+                                <h1>Data Science</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fab fa-connectdevelop"></i>
+                                <h1>Artificial Intelligence <br> & Machine Learning</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-gamepad"></i>
+                                <h1>Game Development</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-server"></i>
+                                <h1>Operating System <br> & Servers</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-laptop-code"></i>
+                                <h1>User Experience(UX) & <br> User Interface(UI) Design</h1>
+                            </div>
+                        </a>
+                        <a class="cate-card-link" href="">
+                            <div class="cate-main-content">
+                                <i class="fas fa-laptop-code"></i>
+                                <h1>Graphics Design <br> & Illustration</h1>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer-wrapper">
+                    <div class="sections">
+                        <div class="section">
+                            <h1>POPULAR PATHS & COURSES</h1>
+                            <a href="">Software & Mobile App Development</a>
+                            <a href="">Web Development</a>
+                            <a href="">Software & Mobile App Development</a>
+                            <a href="">Programming Languages</a>
+                            <a href="">Cyber Security</a>
+                            <a href="">Ethical Hacking</a>
+                            <a href="">Database Management System & Development</a>
+                        </div>
+                        <div class="section">
+                            <h1 class="title"> .</h1>
+                            <a href="">Data Science</a>
+                            <a href="">Artificial Intelligence & Machine Learning</a>
+                            <a href="">Game Development</a>
+                            <a href="">Operating System & Servers</a>
+                            <a href="">User Experience(UX) & User Interface(UI) Design</a>
+                            <a href="">Graphics Design & illustration</a>
+                            <a href="">Database Management System & Development</a>
+                        </div>
+                        <div class="section">
+                            <h1>ABOUT US</h1>
+                            <a href="">Our Mission</a>
+                            <a href="">Blog</a>
+                            <a href="">Help and FAQ</a>
+                            <a href="">Teams</a>
+                            <a href="">Contact Us</a>
+                            <a href="">How to Contribute</a>
+                            <a href="">Privacy Terms & Refunds</a>
+                        </div>
+                        <div class="section">
+                            <h1>Get in Touch</h1>
+                            <a href="">Facebook</a>
+                            <a href="">Twitter</a>
+                            <a href="">Instagram</a>
+                           <a href="">hello@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <p>Copyright 2018-2021, E-Learning Inc. All rights reserved</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+       $(document).ready(function() {
+          {% block domready %}
+          
+          {% endblock %}
+        });
+    </script>
+    <script src="{% static 'javascript/Tab.js' %}"></script>
+    <script src="{% static 'javascript/base.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.container{
+    padding: 10px 20px;
+}
+.container p,a{
+    font-size: 1.4rem;
+    text-decoration: none;
+}

@@ -1,0 +1,186 @@
+{% extends 'Courses/base.html' %}
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/Teach.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="teach-wrapper">
+        <div class="teach-items">
+            <img class="background" src="{% static 'images/lecturer.jpg' %}" alt="" >
+            <div class="teach-content-main">
+                <h1 class="header">Come teach <br> with us </h1>
+                <span class="text">Influence the future of technology.
+                    Become an instructor and change lives — including your own!
+                </span>
+                <a href="{% url 'teacher_signup' %}"><button class="teach-btn">Get started</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="teach-mob">
+        <img class="background-mob" src="C:\Users\MONSON\Desktop\cssgridEXAmples\CodeCampfrtd\teach.jpg" alt="" >
+        <div class="teach-content-mob">
+            <h1 class="header">Come teach with us </h1>
+            <span class="text">Influence the future of technology.
+                Become an instructor and change lives — including your own!
+            </span>
+            <button class="teach-btn">Get started</button>
+        </div>
+    </div>
+    <div class="teach-card">
+        <div class="text-header">So many reasons to start</div>
+        <div class="teach-card-items">
+            <div class="items">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h1>Teach your way</h1>
+                <div class="text-items">Publish the course you want, in the way you want,
+                    and always have of control your own content.
+                </div>
+            </div>
+            <div class="items">
+                <i class="fas fa-user-graduate"></i>
+                <h1>Inspire learners</h1>
+                <div class="text-items">
+                    Teach what you know and help learners explore their interests,
+                     gain new skills, and advance their careers.
+                </div>
+            </div>
+            <div class="items">
+                <i class="fas fa-trophy"></i>
+                <h1>Get rewarded</h1>
+                <div class="text-items">
+                    Expand your professional network, build your expertise,
+                    and earn money on each paid enrollment.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="user-card">
+        <div class="user-items">
+            <div class="user-item">
+                <div class="header">12M</div>
+                <div class="text">Students</div>
+            </div>
+            <div class="user-item">
+                <div class="header">35+</div>
+                <div class="text">Languages</div>
+            </div>
+            <div class="user-item">
+                <div class="header">54M</div>
+                <div class="text">Enrollments</div>
+            </div>
+            <div class="user-item">
+                <div class="header">100+</div>
+                <div class="text">Countries</div>
+            </div>
+        </div>
+    </div>
+    <div class="course-tab">
+        <div class="header">How to begin</div>
+        <div class="tab-items">
+            <div class="tab-item">
+                <button onclick="Tab('one')">Plan your curriculum</button>
+                <button onclick="Tab('two')">Record your video</button>
+                <button onclick="Tab('three')">Launch your course</button>
+            </div>
+            <div id="one" class="tab-text">
+                <div class="sub-text">
+                    <div class="text">You start with your passion and knowledge. Then choose a promising topic with the help of
+                        our Marketplace Insights tool.
+                       The way that you teach — what you bring to it — is up to you.
+                       <h1>How we help you</h1>
+                       We offer plenty of resources on how to create your first course. And, our instructor dashboard 
+                       and curriculum pages help keep you organized.
+                    </div>
+                   <div class="tab-img">
+                       <img class="background" src="{% static 'images/curriculum.jpg' %}" alt="" >
+                   </div>
+                </div>
+            </div>
+            <div id="two" class="tab-text" style="display: none;">
+                <div class="sub-text">
+                    <div class="text">
+                        Use basic tools like a smartphone or a DSLR camera. Add a good microphone and you're 
+                        ready to start.
+
+                        If you don't like being on camera, just capture your screen. Either way, we recommend 
+                        two hours or more of video for a paid course.
+                       <h1>How we help you</h1>
+                       Our support team is available to help you throughout the process and provide feedback on test videos.
+                    </div>
+                   <div class="tab-img">
+                    <img class="background" src="{% static 'images/record.jpg' %}" alt="" >
+                   </div>
+                </div>
+            </div>
+            <div id="three" class="tab-text" style="display: none;">
+                <div class="sub-text">
+                    <div class="text">
+                        Gather your first ratings and reviews by promoting your course through social media
+                        and your professional networks.
+
+                        Your course will be discoverable in our marketplace where you earn revenue from each paid enrollment.
+                       <h1>How we help you</h1>
+                       Our custom coupon tool lets you offer enrollment incentives while our global promotions
+                        drive traffic to courses.
+                    </div>
+                   <div class="tab-img">
+                    <img class="background" src="{% static 'images/course.jpg' %}" alt="" >
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="mob-tab-items">
+            <div class="mob-tab-item">
+                <button class="accordion a" >Plan your curriculum</button>
+                <div class="panel">
+                    <div class="panel-wrapper">
+                        <div class="pan-item">
+                            <img class="background" src="{% static 'images/curriculum.jpg' %}" alt="" >
+                            <div class="pan-text">You start with your passion and knowledge. Then choose a promising topic with the help of
+                                our Marketplace Insights tool.
+                               The way that you teach — what you bring to it — is up to you.
+                               <h1>How we help you</h1>
+                               We offer plenty of resources on how to create your first course. And, our instructor dashboard 
+                               and curriculum pages help keep you organized.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="accordion b" >Record your video</button>
+                <div class="panel">
+                    <div class="panel-wrapper">
+                        <div class="pan-item">
+                            <img class="background" src="{% static 'images/record.jpg' %}" alt="" >
+                            <div class="pan-text">You start with your passion and knowledge. Then choose a promising topic with the help of
+                                our Marketplace Insights tool.
+                               The way that you teach — what you bring to it — is up to you.
+                               <h1>How we help you</h1>
+                               We offer plenty of resources on how to create your first course. And, our instructor dashboard 
+                               and curriculum pages help keep you organized.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="accordion c">Launch your course</button>
+                <div class="panel">
+                    <div class="panel-wrapper">
+                        <div class="pan-item">
+                            <img class="background" src="{% static 'images/curriculum.jpg' %}" alt="" >
+                            <div class="pan-text">You start with your passion and knowledge. Then choose a promising topic with the help of
+                                our Marketplace Insights tool.
+                               The way that you teach — what you bring to it — is up to you.
+                               <h1>How we help you</h1>
+                               We offer plenty of resources on how to create your first course. And, our instructor dashboard 
+                               and curriculum pages help keep you organized.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'javascript/Tab.js' %}"></script>
+{% endblock %}

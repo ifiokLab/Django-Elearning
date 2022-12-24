@@ -1,0 +1,57 @@
+{% extends 'Courses/base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="body">
+    <h1 class="head">
+        {% if object %}
+            Edit course "{{ object.title }}"
+        {% else %}
+            Create a new course
+        {% endif %}
+    </h1>
+    <div class="module">
+        <h1>Course Info</h1>
+        <form action="" method="post"  enctype="multipart/form-data">
+            {% if form.errors %}
+               {% for field in form %}
+               {% for error in field.errors %}
+                    <p style="color: red;font-size: 1.6rem;">{{error}}</p>
+                {% endfor %}
+                {% endfor %}
+            {% endif %}
+            {% csrf_token %}
+            <div class="card">
+                <div class="title">Category:</div>
+                <div class="box">{{form.category}}</div>
+            </div>
+            <div class="card ">
+                <div class="title">Title:</div>
+                <div class="box a">{{form.title}}</div>
+            </div>
+            <div class="card">
+                <div class="title">Course Code:</div>
+                <div class="box a">{{form.course_code}}</div>
+            </div>
+            <div class="card">
+                <div class="title">Slug:</div>
+                <div class="box a">{{form.slug}}</div>
+            </div>
+            <div class="card">
+                <div class="title">Overview:</div>
+                <div class="box b">{{form.overview}}</div>
+            </div>
+            
+            
+            <div class="card">
+                <div class="title">thumbnail:</div>
+                <div class="box b">{{form.thumbnail}}</div>
+            </div>
+            <p><input type="submit" value="Save course"></p>
+        </form>
+
+    </div>
+{% endblock %}

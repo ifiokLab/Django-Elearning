@@ -1,0 +1,122 @@
+{% extends 'Courses/base.html' %}
+{% load static %}
+{% block extrahead %}
+
+{% endblock %}
+
+{% block content %}
+<div class="body-web">
+  <div class="ads">
+      <div class="ads-content">
+          <img class="background" src="{% static 'images/Uniuyo2.jpg' %}" alt="" >
+          <div class="ads-content-main">
+              <h1 class="content-main-text">Dream Up</h1>
+              <span class="content-sub-text">
+                Ambition accepted. Learn the latest skills to reach your
+                professional goals.
+              </span>
+              <form class="content-main-search" action="">
+                  <input class="main-search-text" type="text" placeholder="What do you want to learn?">
+                  <button class="main-search-btn">
+                    <i class='fa fa-search search-btn-icon' ></i>
+                  </button>
+              </form>
+          </div>
+      </div>
+      <div class="ads-mo">
+          <h1 class="content-main-text">Dream Up</h1>
+          <span class="content-sub-text">
+            Ambition accepted. Learn the latest skills to reach your
+            professional goals.
+          </span>
+          <form class="content-main-search" action="">
+              <input  class="main-search-text" type="text" placeholder="What do you want to learn?">
+              <button class="main-search-button">
+                <i class='fa fa-search search-btn-icon' ></i>
+              </button>
+          </form>
+      </div>
+    </div>
+  </div>
+  <div class="menu-info">
+      <div class="menu-info-wrapper">
+        <i class="far fa-clock"></i>
+        <p>Learn on your timeline</p>
+      </div>
+      <div class="menu-info-wrapper">
+        <i class="fas fa-check"></i>
+        <p>Master your craft</p>
+      </div>
+      <div class="menu-info-wrapper">
+        <i class="fas fa-user-graduate"></i>
+        <p>Keep up with emerging trends</p>
+      </div>
+</div>
+
+  <div class="body">
+      <div class="course-card-wrapper">
+        <div class="course-card-detail">
+            <div class="popular-course">
+                <h1>Popular Courses </h1>
+            </div>
+            <div class="course-link-wrapper">
+              {% for course in object_list %}
+              
+              
+                 <a class="course-card-link" href="{% url 'course_detail' course.slug %}">
+                    <div class="course-main-content">
+                        <div class="top-image">
+                          <img src="{{ course.thumbnail.url }}" alt="">
+                        </div>
+                        <div class="text-label">
+                            <div class="title">
+                                <h1> {{ course.title }} </h1>
+                                <div class="rating-wrapper">
+                                    <div class="inline-rating-box">
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star-half-alt"></i></span>
+                                    </div>
+                                    <div class="rating-number">
+                                        <span>(4.5)</span>
+                                    </div>
+                                    <div><strong class="strong">8796</strong>Students</div>
+                                </div>
+                            </div>
+                            <div class="pro-content-label">
+                                <div class="pro-content-label-quizzes">
+                                    <span><i class="fas fa-laptop-code"></i></span>
+                                    <span><strong class="strong">121</strong>Exercises</span>
+                                </div>
+                                <div class="pro-content-label-projects">
+                                    <span><i class="fas fa-trophy"></i></span>
+                                    <span><strong class="strong">60</strong>Projects</span>
+                                </div>
+                                <div class="pro-content-label-life">
+                                    <span><i class="fas fa-infinity"></i></span>
+                                    <span> life time Access</span>
+                                </div>
+                                <div class="pro-content-label-cert">
+                                    <span><i class="fas fa-medal"></i></span>
+                                    <span>Certificate of completion</span>
+                                </div>
+                                <div class="pro-content-label-videos">
+                                    <span><i class="far fa-play-circle"></i></span>
+                                    <span><strong class="strong">95</strong>Hours interactive videos</span>
+                                </div>
+                            </div>
+      
+                        </div>
+                    </div>
+                </a>
+                
+                {% endfor %}
+            </div>
+        </div>
+      </div> 
+      
+  </div>
+{% endblock %}
+ 

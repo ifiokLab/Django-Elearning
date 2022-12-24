@@ -1,0 +1,32 @@
+{% extends 'Courses/base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="body">
+    <div class="container">
+        <h1>My Courses</h1>
+       {% for course in object_list %}
+            <div class="course">
+                <div class="course-title">{{course.title}}</div>
+                <div class="options">
+                    <a class="edit" href="{% url 'course_edit' course.id %}">Edit</a>
+                    <a class="delete" href="{% url 'course_delete' course.id %}">Delete</a>
+                    <a href="{% url 'course_module_update' course.id %}">Edit modules</a>
+                    {% if course.modules.count > 0 %}
+                    <a href="{% url "module_content_list" course.modules.first.id %}">
+                    Manage contents</a>
+                  {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <p>You haven't created any courses yet.</p>
+        {% endfor %}
+        <p class="create">
+            <a href="{% url 'course_create' %}" class="button">Create new course</a>
+    </div>
+    
+  </div>
+{% endblock %}

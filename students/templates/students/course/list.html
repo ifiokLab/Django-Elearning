@@ -1,0 +1,29 @@
+{% extends 'Courses/base.html' %}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="body">
+    <div class="container">
+        <h1>My Courses</h1>
+       {% for course in object_list %}
+            <div class="course">
+                <div class="course-title">{{course.title}}</div>
+                <div class="options">
+                    <p><a href="{% url 'student_course_detail' course.id %}">Access contents</a></p>
+                </div>
+            </div>
+        {% empty %}
+            <p>You are not enrolled in any courses yet.</p>
+            <span class="create">
+                <a href="{% url 'home' %}" class="button">Browse courses</a>
+            </span>
+            <span style="margin-left: 10px;">to enroll in a course.</span>
+        {% endfor %}
+        
+    </div>
+   
+  </div>
+{% endblock %}

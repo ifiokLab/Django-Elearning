@@ -1,0 +1,34 @@
+.body .container{
+    padding: 10px 20px;
+    font-size: 1.4rem;
+}
+.body .container .course{
+    border: solid 1px;
+    padding: 10px 20px; 
+    margin-bottom: 5px;
+}
+.body .options{
+    display: flex;
+    color: green;
+}
+.body .options a{
+    text-decoration: none;
+    margin-right: 7px;
+}
+.body .course-title{
+    font-size: 1.6rem;
+    padding: 0 0 10px 0;
+    font-weight: 600;
+    color: black;
+}
+.body .button{
+    color: white;
+    text-decoration: none;
+}
+.body .create{
+    padding: 10px 20px;
+    background-color: green;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 20rem;
+}

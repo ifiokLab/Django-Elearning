@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'css/CourseView.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a0903f3219.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-content-wrapper">
+        <div class="main-content">
+            <div class="component-course-taking">
+                <div class="app-row">
+                    <div class="header">
+                        <a href="">
+                            <img width="91" height="34" src="C:\Users\MONSON\Desktop\cssgridEXAmples\CodeCampfrtd\logo-udemy-inverted.svg" alt="">
+                        </a>
+                        <div class="header-title">
+                           {{object.title}}
+                        </div>
+                    </div>
+                    <div class="header-box">
+                        <button class="rating">
+                            <span><i class="fas fa-star"></i></span>
+                            <span>Leave a rating</span>
+                        </button>
+                        <button class="progress">
+                            <span><i class="fas fa-trophy"></i></span>
+                            <span>Your Progress</span>
+                        </button>
+                        <button class="share">
+                            <span><i class="fas fa-share"></i></span>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-column-container">
+                    <div class="app-content-column">
+                        <div class="app-row-body-container">
+                            <div class="screen"></div>
+                            <div class="footer">
+                                <div class="footer-items">
+                                    <button><i class="fas fa-cog"></i></button>
+                                </div>
+                                <div class="footer-items">
+                                    <button><i class="fas fa-expand-alt"></i></button>
+                                </div>
+                                <div class="footer-items">
+                                    <button><i class="fas fa-compress-arrows-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs-content">
+                            <div class="course-overview-heading">
+                                <div class="overview-heading">About this Course</div>
+                                <p>{{object.overview}}
+                                </p>
+                            </div>
+                            <div class="course-overview-row">
+                                <div class="number">By their numbers</div>
+                                <div class="skill">
+                                    <div>Skill: All Levels</div>
+                                    <div>Students : 123432</div>
+                                    <div>Language: English</div>
+                                </div>
+                                <div class="lectures">
+                                    <div>Lectures: 155</div>
+                                    <div>Video: 22 total hours</div>
+                                </div>
+                            </div>
+                            <div class="course-cert">
+                                <div class="cert">Certificates</div>
+                                <div class="get">
+                                    <p>
+                                        Get Udemy certificate by completing entire course
+                                    </p>
+                                    <a href="">
+                                        <span>Udemy Certificate</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <span id="dots">...</span>
+                            <div id="more">
+                                <div  class="desc-tab">
+                                    <div class="desc">Description</div>
+                                    <div class="desc-details"></div>
+                                </div>
+                                <div class="author">
+                                    <div class="instructor">Instructor</div>
+                                    <div class="instructor-overview">
+                                        <div class="instructor-profile">
+                                            <img src="{% static 'images/josepix.jpg' %}" alt="">
+                                            <div class="instructor-title">
+                                                <a href="">{{object.owner}}</a>
+                                                <p>Head of Data Science, Pierian Data Inc.</p>
+                                            </div>
+                                        </div>
+                                        <div class="social-link">
+                                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                                           <a href=""><i class="fab fa-youtube"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="show-more" onclick="myFunction()" id="myBtn">Read more</button>
+                        </div>
+                    </div>
+                    <div class="sidebar-column">
+                        <div class="side-bar-wrapper">
+                            <div class="course-cont">
+                                <h1>Course Content</h1>
+                            </div>
+                            <div class="course-tab">
+                              
+                                <div class="mob-tab-items">
+                                    <div class="mob-tab-item">
+                                        {% for y in object.modules.all %}
+                                        <button class="accordion a" >{{y.title}}</button>
+                                        <div class="panel">
+                                            <div class="panel-wrapper">
+                                                <div class="pan-item">
+                                                    {% for z in y.contents.all %}
+                                                    <div class="pan-text">
+                                                        <i class="fas fa-play-circle"></i>
+                                                        <a href=""><span>{{z.item}}</span></a>
+                                                    </div>
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% empty %}
+                                            <h1><li>No modules yet.</li> </h1>  
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+</body>
+<script src="{% static 'javascript/CourseView.js' %}"></script>
+<script src="{% static 'javascript/Tab.js' %}"></script>
+</html>
